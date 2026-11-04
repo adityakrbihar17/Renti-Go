@@ -1,0 +1,124 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    width: 100%;
+    height: 70vh;
+    background: url(image/bann2.png);
+    background-size: cover;
+    position: relative;
+}
+
+nav{
+    color: white;
+    width: 75%;
+    height: 80px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+
+.logo{
+    font-size: 2rem;
+}
+
+.menu a{
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: white;
+    padding: 10px 20px;
+    margin: 0px 7px;
+}
+
+.LS a{
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    margin: 7px;
+    background-color: green;
+    border-radius: 2%;
+}
+
+.container{
+    color: white;
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    width: 400px;
+    height: 540px;
+}
+
+.container h1{
+    font-size: 5em;
+}
+
+.ride{
+    color: green;
+}
+
+.container p{
+    text-align: justify;
+    margin: 15px 0;
+    line-height: 1.5;
+    padding-left: 10%;
+    font-size: 20px;
+}
+
+.button-group{
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.container button{
+    background-color: green;
+    color: white;
+    padding: 10px 30px;
+    margin-left: 0;
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    border-radius: 3%;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.container button:hover{
+    background-color: darkgreen;
+    transition: 0.3s;
+}
+
+.section-heading{
+    display: flex;
+    align-items: centre;
+    justify-content: center;
+    gap: 15px;
+    box-shadow: 2px 2px 8px gray;
+    margin-top: 5px;
+    height: 50px;
+}
+
+.section-heading h2{
+    color: green;
+    font-size: 28px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding-top: 5px;
+}
+
+.containercar{
+    display: flex;
+    width: 100%;
+    min-height: 400px
+}
+
+.car{
+    border: 2px black;
+    box-shadow: 2px 2px 8px gray;
+    height: 300px;
+    width: 300px;
+    margin: 10px
+}
