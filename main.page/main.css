@@ -1,43 +1,255 @@
-.container{
+
+/* Basic Settings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+}
+
+
+/* Navigation Bar */
+header {
+    background-color: #111;
+    color: white;
+    padding: 20px 7%;
+
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.options{
-    flex: 1 1 250px;
-    max-width: 350px;
-    height: 350px;
-    border: 3px solid black;
+.logo {
+    color: #e6a23c;
+    font-size: 28px;
+}
+
+.logo span {
+    color: white;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 15px;
+}
+
+nav a:hover {
+    color: #e6a23c;
+}
+
+.profile {
+    background-color: #e6a23c;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+/* Page Heading */
+.heading {
+    text-align: center;
+    padding: 55px 20px 30px;
+}
+
+.heading p {
+    color: #d89424;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+
+
+/* Search Bar */
+.search {
+    background-color: white;
+    margin: 10px 7% 40px;
+    padding: 20px;
+    display: flex;
+    gap: 15px;
     border-radius: 10px;
-    box-shadow: 5px 5px 10px gray;
+}
+
+.search input {
+    flex: 2;
+}
+
+.search input,
+.search select {
+    padding: 13px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 90%;
+}
+
+.search button {
+    background-color: #111;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+/* Cars Section */
+.cars {
+    padding: 10px 7% 60px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+
+/* Individual Car and Bike Cards */
+.car-card {
+    background-color: white;
+    border-radius: 10px;
     overflow: hidden;
+
+    box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+    transition: 0.2s;
 }
 
-.options img{
+.car-card:hover {
+    transform: translateY(-8px);
+}
+
+.car-card img {
     width: 100%;
-    height: 60%;
+    height: 210px;
     object-fit: cover;
-    display: block;
 }
 
-.options h2{
-    justify-self: center;
+.car-info {
+    padding: 20px;
 }
 
-.options h3{
-    justify-self: center;
+.car-info h2 {
+    font-size: 21px;
+    margin-bottom: 10px;
 }
 
-.options button{
-    margin-left: 38%;
+.car-info p {
+    color: #777;
+    margin-bottom: 18px;
 }
 
-/* .container :hover{
-    box-shadow: 10px 10px 20px gray;
+.car-info h3 {
+    font-size: 23px;
+    margin-bottom: 18px;
 }
 
-.options h2 :hover{
-    box-shadow: none;
-} */
+.car-info h3 span {
+    font-size: 14px;
+    color: #777;
+    font-weight: normal;
+}
+
+.car-info button {
+    width: 100%;
+    padding: 13px;
+    background-color: #111;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.car-info button:hover {
+    background-color: #e6a23c;
+    color: black;
+}
+
+
+/* Bikes Section */
+.bike-section {
+    padding: 20px 7% 60px;
+    text-align: center;
+}
+
+.bike-section h1 {
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.bike-subtitle {
+    color: #777;
+    margin-bottom: 35px;
+}
+
+.bikes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+
+/* Footer */
+footer {
+    background-color: #111;
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+
+footer h2 span {
+    color: white;
+    margin-bottom: 10px;
+}
+
+footer h2 {
+    color: #e6a23c;
+    margin-bottom: 10px;
+}
+
+footer p {
+    color: #ccc;
+    margin: 8px;
+}
+
+
+/* Tablet Screen */
+@media (max-width: 800px) {
+
+    .cars {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .bikes {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    nav {
+        display: none;
+    }
+
+}
+
+
+/* Mobile Screen */
+@media (max-width: 550px) {
+
+    .cars {
+        grid-template-columns: 1fr;
+    }
+
+    .bikes {
+        grid-template-columns: 1fr;
+    }
+
+    .search {
+        flex-direction: column;
+    }
+
+    .heading h1 {
+        font-size: 30px;
+    }
+
+}
