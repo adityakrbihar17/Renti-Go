@@ -1,61 +1,259 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rentigo - Available Vehicles</title>
     <link rel="stylesheet" href="main.css">
-    <title>Document</title>
+    <script src="main.js"></script>
 </head>
+
 <body>
-    <div class="container">
-        <div class="options">
-            <img src="images/dezire.webp" alt="dezire">
-            <h2>Dezire</h2>
-            <h3>1999rs/day</h3>
-            <button> Book Now</button>
+
+    <!-- Navbar -->
+    <header>
+        <h2 class="logo"><span>Renti</span>go</h2>
+
+        <nav>
+            <a href="hom.html">Home</a>
+            <a href="main.html">Available Vehicles</a>
+            <a href="confirm.html">My Bookings</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+        <button class="profile">My Account</button>
+    </header>
+
+
+    <!-- Page Heading -->
+    <section class="heading">
+
+        <p>RENT YOUR FAVOURITE VEHICLE</p>
+
+    </section>
+
+
+    <!-- Search Bar -->
+    <section class="search">
+
+        <select id="category">
+            <option value="all">All Categories</option>
+            <option value="SUV">SUV</option>
+            <option value="Sedan">Sedan</option>
+            <option value="Hatchback">Hatchback</option>
+            <option value="Bike">Bikes</option>
+        </select>
+
+        <button onclick="searchVehicles()">Search</button>
+
+    </section>
+
+
+    <!-- Cars Section -->
+    <section class="cars">
+
+        <div class="car-card" data-category="SUV">
+            <img src="https://imgd-ct.aeplcdn.com/1056x660/n/cw/ec/125217/mahindra-scorpio-front-view2.jpeg?isig=0&q=75&wm=0">
+
+            <div class="car-info">
+                <h2>Mahindra Scorpio</h2>
+                <p>SUV | Diesel | 7 Seater</p>
+                <h3>₹3,500 <span>/ day</span></h3>
+
+                <button onclick="bookVehicle('Mahindra Scorpio', 3500)">
+                    Book Now
+                </button>
+            </div>
         </div>
-        <div class="options">
-            <img src="images/scorpio.jpg" alt="scorpio">
-            <h2>Scorpio</h2>
-            <h3>2999rs/day</h3>
-            <button> Book Now</button>
+
+
+        <div class="car-card" data-category="SUV">
+            <img src="https://img.autocarindia.com/ExtraImages/20251007042801_Mahindra_Thar_Front_Quarter_Static_2.jpg">
+
+            <div class="car-info">
+                <h2>Mahindra Thar</h2>
+                <p>SUV | Diesel | 4 Seater</p>
+                <h3>₹3,000 <span>/ day</span></h3>
+
+                <button onclick="bookVehicle('Mahindra Thar', 3000)">
+                    Book Now
+                </button>
+            </div>
         </div>
-        <div class="options">
-            <img src="images/ertiga.avif" alt="ertiga">
-            <h2>Ertiga</h2>
-            <h3>2999rs/day</h3>
-            <button> Book Now</button>
+
+
+        <div class="car-card" data-category="Sedan">
+            <img src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/202501/dzire-1-000km-304345415-16x9_0.jpg?VersionId=FHrURdb6jxoX9ssWXCF7IT23DaLz62NJ&size=690%3A388">
+
+            <div class="car-info">
+                <h2>Maruti Swift Dzire</h2>
+                <p>Sedan | Petrol | 5 Seater</p>
+                <h3>₹1,800 <span>/ day</span></h3>
+
+                <button onclick="bookVehicle('Maruti Swift Dzire', 1800)">
+                    Book Now
+                </button>
+            </div>
         </div>
-        <div class="options">
-            <img src="images/fortuner.jpg" alt="fortuner">
-            <h2>Fortuner</h2>
-            <h3>3999rs/day</h3>
-            <button> Book Now</button>
+
+
+        <div class="car-card" data-category="SUV">
+            <img src="https://imgd.aeplcdn.com/640X480/vimages/202605/4539982_120569_1_1778319548947.jpg?fit=true&qp=80">
+
+            <div class="car-info">
+                <h2>Hyundai Creta</h2>
+                <p>SUV | Petrol | 5 Seater</p>
+                <h3>₹2,500 <span>/ day</span></h3>
+
+                <button onclick="bookVehicle('Hyundai Creta', 2500)">
+                    Book Now
+                </button>
+            </div>
         </div>
-        <div class="options">
+
+
+        <div class="car-card" data-category="SUV">
+            <img src="https://imgd-ct.aeplcdn.com/1056x660/n/cw/ec/204616/fortuner-front-view.jpeg?isig=0&q=80">
+
+            <div class="car-info">
+                <h2>Toyota Fortuner</h2>
+                <p>SUV | Diesel | 7 Seater</p>
+                <h3>₹5,500 <span>/ day</span></h3>
+
+                <button onclick="bookVehicle('Toyota Fortuner', 5500)">
+                    Book Now
+                </button>
+            </div>
+        </div>
+
+
+        <div class="car-card" data-category="Hatchback">
+            <img src="https://cdn-s3.autocarindia.com/Maruti-Suzuki/Baleno/GT_07665.JPG">
+
+            <div class="car-info">
+                <h2>Maruti Baleno</h2>
+                <p>Hatchback | Petrol | 5 Seater</p>
+                <h3>₹1,500 <span>/ day</span></h3>
+
+                <button onclick="bookVehicle('Maruti Baleno', 1500)">
+                    Book Now
+                </button>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- Bikes Section -->
+    <section class="bike-section">
+
+        <h1>Popular Bikes</h1>
+
+        <p class="bike-subtitle">
+            Explore our collection of Indian bikes at affordable prices.
+        </p>
+
+        <div class="bikes">
+
+            <div class="car-card" data-category="Bike">
+                <img src="https://cdni.autocarindia.com/Galleries/20131210041225_Bajaj-Pulsar-200-NS-Blue.jpg">
+
+                <div class="car-info">
+                    <h2>Bajaj Pulsar NS200</h2>
+                    <p>Petrol | 200cc | Sports Bike</p>
+                    <h3>₹900 <span>/ day</span></h3>
+
+                    <button onclick="bookVehicle('Bajaj Pulsar NS200', 900)">
+                        Book Now
+                    </button>
+                </div>
+            </div>
+
+
+            <div class="car-card" data-category="Bike">
+                <img src="https://imgd.aeplcdn.com/1280x720/n/cw/ec/50100/glamour-right-front-three-quarter.jpeg?q=80">
+
+                <div class="car-info">
+                    <h2>Hero Glamour</h2>
+                    <p>Petrol | 125cc | Commuter</p>
+                    <h3>₹600 <span>/ day</span></h3>
+
+                    <button onclick="bookVehicle('Hero Glamour', 600)">
+                        Book Now
+                    </button>
+                </div>
+            </div>
+
+
+            <div class="car-card" data-category="Bike">
+                <img src="https://www.rushlane.com/wp-content/uploads/2022/05/royal-enfield-classic-350-prices-may-2022-3.jpg">
+
+                <div class="car-info">
+                    <h2>Royal Enfield Classic 350</h2>
+                    <p>Petrol | 350cc | Cruiser</p>
+                    <h3>₹1,200 <span>/ day</span></h3>
+
+                    <button onclick="bookVehicle('Royal Enfield Classic 350', 1200)">
+                        Book Now
+                    </button>
+                </div>
+            </div>
+
+
+            <div class="car-card" data-category="Bike">
+                <img src="https://ik.imagekit.io/easemp/emp/images/TVS_Apache_RTR_160_77a6eb8da0_nkJJTqibV.jpg">
+
+                <div class="car-info">
+                    <h2>TVS Apache RTR 160</h2>
+                    <p>Petrol | 160cc | Sports Bike</p>
+                    <h3>₹800 <span>/ day</span></h3>
+
+                    <button onclick="bookVehicle('TVS Apache RTR 160', 800)">
+                        Book Now
+                    </button>
+                </div>
+            </div>
+
+
+            <div class="car-card" data-category="Bike">
+                <img src="https://bike.zigcdn.com/processedimages/honda/shine-bs6/source/shine-bs669c5016682608.jpg">
+
+                <div class="car-info">
+                    <h2>Honda Shine</h2>
+                    <p>Petrol | 125cc | Commuter</p>
+                    <h3>₹550 <span>/ day</span></h3>
+
+                    <button onclick="bookVehicle('Honda Shine', 550)">
+                        Book Now
+                    </button>
+                </div>
+            </div>
+
+
+            <div class="car-card" data-category="Bike">
+                <img src="https://cdn.bikedekho.com/upload/userfiles/images/68da808655a6e.jpg?tr=w-930">
+
+                <div class="car-info">
+                    <h2>Hero Splendor Plus</h2>
+                    <p>Petrol | 100cc | Commuter</p>
+                    <h3>₹500 <span>/ day</span></h3>
+
+                    <button onclick="bookVehicle('Hero Splendor Plus', 500)">
+                        Book Now
+                    </button>
+                </div>
+            </div>
 
         </div>
-        <div class="options">
 
-        </div>
-        <div class="options">
+    </section>
 
-        </div>
-        <div class="options">
 
-        </div>
-        <div class="options">
+    <!-- Footer -->
+    <footer>
+        <h2><span>Renti</span>go</h2>
+        <p>Your Journey, Your Style.</p>
+        <p>© 2026 Rentigo. All Rights Reserved.</p>
+    </footer>
 
-        </div>
-        <div class="options">
-
-        </div>
-        <div class="options">
-
-        </div>
-        <div class="options">
-
-        </div>
-    </div>
 </body>
 </html>
